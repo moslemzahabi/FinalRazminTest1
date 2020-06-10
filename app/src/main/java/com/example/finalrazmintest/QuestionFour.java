@@ -11,17 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionTwo extends Fragment
+public class QuestionFour extends Fragment
 {
 
 
 
-    SendMessage SM;
+SendMessage SM;
 
 
     List<Qestion> list;
@@ -39,7 +38,7 @@ public class QuestionTwo extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(
-                R.layout.qestion_two, container, false);
+                R.layout.qestion_four, container, false);
 
 
 
@@ -58,16 +57,14 @@ public class QuestionTwo extends Fragment
 
 
 
-        Button previus=view.findViewById(R.id.previus);
-        Button next   =view.findViewById(R.id.next);
+        Button previus =view.findViewById(R.id.previus);
+        Button next    =view.findViewById(R.id.next   );
 
 
 
         list=new ArrayList<>();
-        list.add(new Qestion("meysam","a"));
-        list.add(new Qestion("meysam","a"));
-        list.add(new Qestion("meysam","a"));
-        list.add(new Qestion("meysam","a"));
+        list.add(new Qestion("maman","a"));
+        list.add(new Qestion("maman","a"));
 
         adapter=new MyAdapter(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
@@ -76,17 +73,17 @@ public class QuestionTwo extends Fragment
 
 
 
-        previus .setOnClickListener(new View.OnClickListener() {
+        previus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SM.pages(1);
+                SM.pages(3);
             }
         });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            //    SM.data(1,"","",A,B);
-                SM.pages(3); }});
+//SM.data(1,"","",A,B);
+SM.pages(3); }});
 
 
 
@@ -106,7 +103,7 @@ public class QuestionTwo extends Fragment
 
     interface SendMessage {
         void pages(int Pag_number);
-        void data(int pag, String name, String lastname, int A, int B);
+void data(int pag, String name, String lastname, int A, int B);
     }
 
     @Override
@@ -123,4 +120,6 @@ public class QuestionTwo extends Fragment
 
 
 
-}
+    }
+
+

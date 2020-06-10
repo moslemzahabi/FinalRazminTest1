@@ -9,7 +9,8 @@ import android.widget.Toast;
 
 
 
-public class MainActivity extends AppCompatActivity implements QuestionOne.SendMessage , QuestionTwo.SendMessage {
+public class MainActivity extends AppCompatActivity implements QuestionOne.SendMessage , QuestionTwo.SendMessage,
+        QuestionTree.SendMessage , QuestionFour.SendMessage{
 FragmentManager fragmentManager;
 
     int     a1=0,a2=0,a3=0,a4=0
@@ -57,12 +58,12 @@ FragmentManager fragmentManager;
         if(Pag_number==2){
             fragmentManager.beginTransaction().replace(R.id.framelayout,new QuestionTwo()).commit();
         }
-//        if(Pag_number==3){
-//            fragmentManager.beginTransaction().replace(R.id.framelayout,new QuestionThree()).commit();
-//        }
-//        if(Pag_number==4){
-//            fragmentManager.beginTransaction().replace(R.id.framelayout,new QuestionFour()).commit();
-//        }
+        if(Pag_number==3){
+            fragmentManager.beginTransaction().replace(R.id.framelayout,new QuestionTree()).commit();
+        }
+        if(Pag_number==4){
+            fragmentManager.beginTransaction().replace(R.id.framelayout,new QuestionFour()).commit();
+        }
 //        if(Pag_number==5){
 //
 //            String mes;

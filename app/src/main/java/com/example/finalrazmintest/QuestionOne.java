@@ -58,8 +58,8 @@ SendMessage SM;
 
 
 
-        Button form=view.findViewById(R.id.form);
-        Button page2=view.findViewById(R.id.page4);
+        Button previus =view.findViewById(R.id.previus);
+        Button next    =view.findViewById(R.id.next   );
 
 
 
@@ -69,8 +69,7 @@ SendMessage SM;
         list.add(new Qestion("sasan","a"));
         list.add(new Qestion("sasan","a"));
         list.add(new Qestion("sasan","a"));
-        list.add(new Qestion("sasan","a"));
-        list.add(new Qestion("sasan","a"));
+
 
         adapter=new MyAdapter(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
@@ -79,13 +78,13 @@ SendMessage SM;
 
 
 
-        form.setOnClickListener(new View.OnClickListener() {
+        previus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SM.pages(0);
+                SM.pages(2);
             }
         });
-        page2.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //SM.data(1,"","",A,B);
