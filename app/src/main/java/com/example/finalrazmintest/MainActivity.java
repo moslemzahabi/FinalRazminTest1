@@ -94,7 +94,7 @@ FragmentManager fragmentManager;
     }
 
 
-    public void data(int pag, String name, String lastname, int A, int B) {
+    public void data(int pag, String name, String lastname, int A, int B,int C,int D,int E,int F) {
 
 
 
@@ -110,20 +110,36 @@ FragmentManager fragmentManager;
        if(pag==1){
             a1=A;
             b1=B;
+            c1=C;
+            d1=D;
+            e1=E;
+            f1=F;
 
              }
         if(pag==2){
             a2=A;
             b2=B;
+            c2=C;
+            d2=D;
+            e2=E;
+            f2=F;
         }
         if(pag==3){
             a3=A;
             b3=B;
+            c3=C;
+            d3=D;
+            e3=E;
+            f3=F;
 
         }
         if(pag==4){
             a4=A;
             b4=B;
+            c4=C;
+            d4=D;
+            e4=E;
+            f4=F;
 
         }
 

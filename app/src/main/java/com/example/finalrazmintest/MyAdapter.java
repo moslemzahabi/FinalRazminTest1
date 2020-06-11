@@ -17,6 +17,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
 private List<Qestion>myfriends;
     int a=0;
     int b=0;
+    int c=0;
+    int d=0;
 
     public  MyAdapter(List<Qestion> myfriends){
         this.myfriends=(myfriends==null)?
@@ -68,14 +70,23 @@ public  void bind(final Qestion myfriend){
 
 checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
     @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean c) {
-      if (myfriend.getQuestioncode().equals("a")){
+    public void onCheckedChanged(CompoundButton compoundButton, boolean val) {
+        if (myfriend.getQuestioncode().equals("a")){
           if(checkBox.isChecked()) {     a=a+1;}
           else{ a=a-1  ;  }
       }
-
-
-
+        if (myfriend.getQuestioncode().equals("b")){
+            if(checkBox.isChecked()) {     b=b+1;}
+            else{ b=b-1  ;  }
+        }
+        if (myfriend.getQuestioncode().equals("c")){
+            if(checkBox.isChecked()) {     c=c+1;}
+            else{ c=c-1  ;  }
+        }
+        if (myfriend.getQuestioncode().equals("d")){
+            if(checkBox.isChecked()) {     d=d+1;}
+            else{ d=d-1  ;  }
+        }
 
         Toast.makeText(itemView.getContext(), String.valueOf(a), Toast.LENGTH_SHORT).show();
     }
@@ -85,11 +96,16 @@ checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
 
 
     }
-
-
-
     public  int a(){
-
         return a;
+    }
+    public  int b(){
+        return b;
+    }
+    public  int c(){
+        return c;
+    }
+    public  int d(){
+        return d;
     }
 }

@@ -29,6 +29,10 @@ SendMessage SM;
     MyAdapter adapter;
     int A=0;
     int B=0;
+    int C=0;
+    int D=0;
+    int E=0;
+    int F=0;
 
 
 
@@ -84,7 +88,11 @@ SendMessage SM;
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//SM.data(1,"","",A,B);
+                A=adapter.a();
+                B=adapter.b();
+                C=adapter.c();
+                D=adapter.b();
+                SM.data(1,"","",A,B,C,D,E,F);
 SM.pages(4); }});
 
 
@@ -105,7 +113,7 @@ SM.pages(4); }});
 
     interface SendMessage {
         void pages(int Pag_number);
-void data(int pag, String name, String lastname, int A, int B);
+        void data(int pag, String name, String lastname, int A, int B,int C,int D,int E,int F);
     }
 
     @Override
