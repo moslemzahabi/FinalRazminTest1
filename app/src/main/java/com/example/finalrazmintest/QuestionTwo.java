@@ -11,10 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class QuestionTwo extends Fragment
 {
@@ -24,10 +24,10 @@ public class QuestionTwo extends Fragment
     SendMessage SM;
 
 
-    List<Qestion> list;
+    List<Question> list;
 
     RecyclerView recyclerView;
-    MyAdapter adapter;
+    Adapter_Question adapter;
     int A=0;
     int B=0;
     int C=0;
@@ -68,14 +68,14 @@ public class QuestionTwo extends Fragment
 
 
         list=new ArrayList<>();
-        list.add(new Qestion("a","a"));
-        list.add(new Qestion("b","b"));
-        list.add(new Qestion("c","c"));
-        list.add(new Qestion("d","d"));
-        list.add(new Qestion("e","e"));
-        list.add(new Qestion("f","f"));
+        list.add(new Question("a","a"));
+        list.add(new Question("b","b"));
+        list.add(new Question("c","c"));
+        list.add(new Question("d","d"));
+        list.add(new Question("e","e"));
+        list.add(new Question("f","f"));
 
-        adapter=new MyAdapter(list);
+        adapter=new Adapter_Question(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
 
@@ -99,11 +99,6 @@ public class QuestionTwo extends Fragment
                 F=adapter.f();
                 SM.data(2,"","",A,B,C,D,E,F);
                 SM.pages(3); }});
-
-
-
-
-
 
 
 

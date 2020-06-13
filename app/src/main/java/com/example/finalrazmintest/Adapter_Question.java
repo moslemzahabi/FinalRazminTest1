@@ -7,14 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>  {
-private List<Qestion>myfriends;
+public class Adapter_Question extends RecyclerView.Adapter<Adapter_Question.MyViewHolder>  {
+private List<Question>myfriends;
     int a=0;
     int b=0;
     int c=0;
@@ -22,9 +20,9 @@ private List<Qestion>myfriends;
     int e=0;
     int f=0;
 
-    public  MyAdapter(List<Qestion> myfriends){
+    public Adapter_Question(List<Question> myfriends){
         this.myfriends=(myfriends==null)?
-                new ArrayList<Qestion>():myfriends;
+                new ArrayList<Question>():myfriends;
 
 
 
@@ -34,7 +32,7 @@ private List<Qestion>myfriends;
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-      View itemView=  LayoutInflater.from(parent.getContext()).inflate(R.layout.datalay,parent,false);
+      View itemView=  LayoutInflater.from(parent.getContext()).inflate(R.layout.question_layout,parent,false);
 
 
 
@@ -67,7 +65,7 @@ CheckBox checkBox;
       checkBox=itemView.findViewById(R.id.checkBox);
 
     }
-public  void bind(final Qestion myfriend){
+public  void bind(final Question myfriend){
         checkBox.setText(myfriend.getQestion());
 
 checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

@@ -23,10 +23,10 @@ public class QuestionFour extends Fragment
 SendMessage SM;
 
 
-    List<Qestion> list;
+    List<Question> list;
 
     RecyclerView recyclerView;
-    MyAdapter adapter;
+    Adapter_Question adapter;
     int A=0;
     int B=0;
     int C=0;
@@ -67,13 +67,13 @@ SendMessage SM;
 
 
         list=new ArrayList<>();
-        list.add(new Qestion("a","a"));
-        list.add(new Qestion("b","b"));
-        list.add(new Qestion("c","c"));
-        list.add(new Qestion("d","d"));
-        list.add(new Qestion("e","e"));
-        list.add(new Qestion("f","f"));
-        adapter=new MyAdapter(list);
+        list.add(new Question("a","a"));
+        list.add(new Question("b","b"));
+        list.add(new Question("c","c"));
+        list.add(new Question("d","d"));
+        list.add(new Question("e","e"));
+        list.add(new Question("f","f"));
+        adapter=new Adapter_Question(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
 

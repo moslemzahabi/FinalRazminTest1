@@ -1,10 +1,10 @@
 package com.example.finalrazmintest;
 
-public class Qestion {
+public class Question {
     private  String qestion;
     private String questioncode;
 
-    public Qestion(String qestion, String questioncode) {
+    public Question(String qestion, String questioncode) {
         this.qestion = qestion;
         this.questioncode = questioncode;
     }
