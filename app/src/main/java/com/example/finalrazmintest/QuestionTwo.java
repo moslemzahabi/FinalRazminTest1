@@ -68,10 +68,12 @@ public class QuestionTwo extends Fragment
 
 
         list=new ArrayList<>();
-        list.add(new Qestion("meysam","a"));
-        list.add(new Qestion("meysam","a"));
-        list.add(new Qestion("meysam","a"));
-        list.add(new Qestion("meysam","a"));
+        list.add(new Qestion("a","a"));
+        list.add(new Qestion("b","b"));
+        list.add(new Qestion("c","c"));
+        list.add(new Qestion("d","d"));
+        list.add(new Qestion("e","e"));
+        list.add(new Qestion("f","f"));
 
         adapter=new MyAdapter(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
@@ -93,7 +95,9 @@ public class QuestionTwo extends Fragment
                 B=adapter.b();
                 C=adapter.c();
                 D=adapter.b();
-                SM.data(1,"","",A,B,C,D,E,F);
+                E=adapter.e();
+                F=adapter.f();
+                SM.data(2,"","",A,B,C,D,E,F);
                 SM.pages(3); }});
 
 

@@ -19,6 +19,8 @@ private List<Qestion>myfriends;
     int b=0;
     int c=0;
     int d=0;
+    int e=0;
+    int f=0;
 
     public  MyAdapter(List<Qestion> myfriends){
         this.myfriends=(myfriends==null)?
@@ -87,8 +89,15 @@ checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
             if(checkBox.isChecked()) {     d=d+1;}
             else{ d=d-1  ;  }
         }
+        if (myfriend.getQuestioncode().equals("e")){
+            if(checkBox.isChecked()) {     e=e+1;}
+            else{ e=e-1  ;  }
+        }
+        if (myfriend.getQuestioncode().equals("f")){
+            if(checkBox.isChecked()) {     f=f+1;}
+            else{ f=f-1  ;  }
+        }
 
-        Toast.makeText(itemView.getContext(), String.valueOf(a), Toast.LENGTH_SHORT).show();
     }
 });
 
@@ -108,4 +117,11 @@ checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
     public  int d(){
         return d;
     }
+    public  int e(){
+        return e;
+    }
+    public  int f(){
+        return f;
+    }
+
 }

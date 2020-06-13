@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements QuestionOne.SendMessage , QuestionTwo.SendMessage,
-        QuestionTree.SendMessage , QuestionFour.SendMessage{
+        QuestionTree.SendMessage , QuestionFour.SendMessage, PersonalInformation.SendMessage{
 FragmentManager fragmentManager;
 
     int     a1=0,a2=0,a3=0,a4=0
@@ -24,7 +24,7 @@ FragmentManager fragmentManager;
 
 
 
-    String nname,llastname;
+    String nname="sasan",llastname="zahabi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,21 +35,21 @@ FragmentManager fragmentManager;
 
         fragmentManager = getSupportFragmentManager();//Get Fragment Manager
 
-        fragmentManager.beginTransaction().replace(R.id.framelayout, new QuestionOne()).commit();
+        fragmentManager.beginTransaction().replace(R.id.framelayout, new PersonalInformation()).commit();
 
     }
 
    @Override
     public void pages(int Pag_number) {
-//        if(Pag_number==-2){
-//            fragmentManager.beginTransaction().replace(R.id.framelayout,new ManagerFragment()).commit();
-//        }
+        if(Pag_number==-2){
+            fragmentManager.beginTransaction().replace(R.id.framelayout,new ManagerFragment()).commit();
+        }
 //        if(Pag_number==-1){
 //            fragmentManager.beginTransaction().replace(R.id.framelayout,new IntrooFragment()).commit();
 //        }
-//        if(Pag_number==0){
-//            fragmentManager.beginTransaction().replace(R.id.framelayout,new FragmentOne()).commit();
- //       }
+        if(Pag_number==0){
+            fragmentManager.beginTransaction().replace(R.id.framelayout,new PersonalInformation()).commit();
+        }
 
         if(Pag_number==1){
             fragmentManager.beginTransaction().replace(R.id.framelayout,new QuestionOne()).commit();
@@ -64,32 +64,32 @@ FragmentManager fragmentManager;
         if(Pag_number==4){
             fragmentManager.beginTransaction().replace(R.id.framelayout,new QuestionFour()).commit();
         }
-//        if(Pag_number==5){
-//
-//            String mes;
-//
-//            myDatabaseHelper mydb = new myDatabaseHelper(this);
-//
-//
-//
-//
-//
-////دادن متغیرها به ورودی تابع insertData
-//            boolean x=
-//                    mydb.insertData(nname,llastname,
-//                            a1+a2+a3+a4,b1+b2+b3+b4,c1+c2+c3+c4,
-//                            d1+d2+d3+d4,e1+e2+e3+e4,f1+f2+f3+f4 );
-//
-//
-//            if(x==true)
-//                mes="اطلاعات ذخیره شد";
-//            else
-//                mes="اطلاعات ذخیره نشد";
-////نمایش پیغام
-//            Toast.makeText(this,mes,Toast.LENGTH_LONG).show();
-//            fragmentManager.beginTransaction().replace(R.id.framelayout,new IntrooFragment()).commit();
-//
-//        }
+        if(Pag_number==5){
+
+            String mes;
+
+            myDatabaseHelper mydb = new myDatabaseHelper(this);
+
+
+
+
+
+//دادن متغیرها به ورودی تابع insertData
+            boolean x=
+                    mydb.insertData(nname,llastname,
+                            a1+a2+a3+a4,b1+b2+b3+b4,c1+c2+c3+c4,
+                            d1+d2+d3+d4,e1+e2+e3+e4,f1+f2+f3+f4 );
+
+
+            if(x==true)
+                mes="اطلاعات ذخیره شد";
+            else
+                mes="اطلاعات ذخیره نشد";
+//نمایش پیغام
+            Toast.makeText(this,mes,Toast.LENGTH_LONG).show();
+          fragmentManager.beginTransaction().replace(R.id.framelayout,new ManagerFragment()).commit();
+
+        }
 
     }
 
@@ -145,13 +145,6 @@ FragmentManager fragmentManager;
 
 
 
-
-    }
-
-    public void toast1(){
-
-
-    Toast.makeText(this, "ejra shod", Toast.LENGTH_SHORT).show();
 
     }
 

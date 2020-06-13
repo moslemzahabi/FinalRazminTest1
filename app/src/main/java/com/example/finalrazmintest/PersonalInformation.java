@@ -11,12 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionOne extends Fragment
+public class PersonalInformation extends Fragment
 {
 
 
@@ -24,16 +24,11 @@ public class QuestionOne extends Fragment
 SendMessage SM;
 
 
-    List<Qestion> list;
 
-    RecyclerView recyclerView;
-    MyAdapter adapter;
-    int A=0;
-    int B=0;
-    int C=0;
-    int D=0;
-    int E=0;
-    int F=0;
+
+
+  EditText name,lastname;
+
 
 
 
@@ -42,7 +37,7 @@ SendMessage SM;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(
-                R.layout.qestion_one, container, false);
+                R.layout.personal_information, container, false);
 
 
 
@@ -55,8 +50,8 @@ SendMessage SM;
 
 
 
-        recyclerView  =view.findViewById(R.id.recyclerView  );
-
+        name      =view.findViewById(R.id.et_nameid    );
+        lastname  =view.findViewById(R.id.et_lastnameid);
 
 
 
@@ -66,18 +61,9 @@ SendMessage SM;
 
 
 
-        list=new ArrayList<>();
-        list.add(new Qestion("a","a"));
-        list.add(new Qestion("b","b"));
-        list.add(new Qestion("c","c"));
-        list.add(new Qestion("d","d"));
-        list.add(new Qestion("e","e"));
-        list.add(new Qestion("f","f"));
 
 
-        adapter=new MyAdapter(list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(adapter);
+
 
 
 
@@ -91,14 +77,9 @@ SendMessage SM;
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                A=adapter.a();
-                B=adapter.b();
-                C=adapter.c();
-                D=adapter.b();
-                E=adapter.e();
-                F=adapter.f();
-                SM.data(1,"","",A,B,C,D,E,F);
-SM.pages(2); }});
+
+                SM.data(0,name.getText().toString(),lastname.getText().toString(),0,0,0,0,0,0);
+SM.pages(1); }});
 
 
 
@@ -118,7 +99,7 @@ SM.pages(2); }});
 
     interface SendMessage {
         void pages(int Pag_number);
-        void data(int pag, String name, String lastname, int A, int B,int C,int D,int E,int F);
+        void data(int pag, String name, String lastname, int A, int B, int C, int D, int E, int F);
     }
 
     @Override

@@ -67,9 +67,12 @@ SendMessage SM;
 
 
         list=new ArrayList<>();
-        list.add(new Qestion("sana","a"));
-        list.add(new Qestion("sana","a"));
-        list.add(new Qestion("sana","a"));
+        list.add(new Qestion("a","a"));
+        list.add(new Qestion("b","b"));
+        list.add(new Qestion("c","c"));
+        list.add(new Qestion("d","d"));
+        list.add(new Qestion("e","e"));
+        list.add(new Qestion("f","f"));
 
 
         adapter=new MyAdapter(list);
@@ -92,7 +95,9 @@ SendMessage SM;
                 B=adapter.b();
                 C=adapter.c();
                 D=adapter.b();
-                SM.data(1,"","",A,B,C,D,E,F);
+                E=adapter.e();
+                F=adapter.f();
+                SM.data(3,"","",A,B,C,D,E,F);
 SM.pages(4); }});
 
 
